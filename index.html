@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+      
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-116704025-1"></script>
+    <script src="js/googleanalytics.js"></script> 
+    <!---------------- Google Analytics ---------------->
+      
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    
+    <link href="js/ui-video-ganalytics/ui-video-ganalytics.css" rel="stylesheet" type="text/css">  
+      
+
+    <title>HTML 5 Video Player with Google Analytics event tracking</title>
+  </head>
+  <body>
+      
+    <h3 class="text-center mt-4 mb-4">HTML 5 Video Player with Google Analytics event tracking</h3>
+      
+     <div class="container">
+         <div class="row justify-content-center ">
+
+             <div class="col-12 col-lg-6 videos">
+                 <a class="play_btn play_video" data-video-source="#video_1" href="#"></a>
+
+                 <video id="video_1" title="video 1" preload="none" poster="images/poster-1.jpg">
+                     <source src="video/1.mp4" type="video/mp4">
+
+                 </video>
+                 <h4>Video 1</h4>
+             </div>
+
+             <div class="col-12 col-lg-6 videos">
+                 <a class="play_btn play_video" data-video-source="#video_2" href="#"></a>
+
+                 <video id="video_2" title="video 2" preload="none" poster="images/poster-2.jpg">
+                     <source src="video/2.mp4" type="video/mp4">
+
+                 </video>
+                 <h4>Video 2</h4>
+             </div>
+
+         </div>
+     </div>  
+      
+      
+      
+      
+      
+
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+      
+     
+      
+      
+      
+ <!------------- Video Player + Google Analytics Event Tracker ------------>
+      
+  <script src="js/ui-video-ganalytics/ui-video-ganalytics.js"></script>
+      
+  <script>
+	$(document).ready(function() { 
+  	$().uiPlayVideoGAnalytics(
+        {
+            playBtn: "play_video",
+            hideBtn: "hide_video_btn",
+            sentToAnalytics: true
+        }
+    );
+	});
+  </script>  
+      
+ <!------------- Video ------------>   
+      
+      
+      
+  </body>
+</html>

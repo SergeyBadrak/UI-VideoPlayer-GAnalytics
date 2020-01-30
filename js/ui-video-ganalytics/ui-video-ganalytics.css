@@ -1,0 +1,40 @@
+.videos video {
+    width: 100%;
+    height: auto;
+    
+    object-fit: cover;
+}
+.videos {
+    margin: 20px 0;
+}
+.videos h4 {
+    color: #CCC;
+    text-shadow: none;
+}
+
+.play_btn {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    right: 0;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    
+    background-image: url(play_btn.svg);
+    background-repeat: no-repeat;
+    
+    z-index: 2;
+    
+    transition: all .2s ease-in-out;
+}
+.play_btn:hover {
+    transform: scale(1.15, 1.15);
+}
+.hide_video_btn {
+    opacity: 0;
+    transition: all 0.5s;
+    transform: scale(1.5, 1.5);
+    visibility: hidden;
+}
