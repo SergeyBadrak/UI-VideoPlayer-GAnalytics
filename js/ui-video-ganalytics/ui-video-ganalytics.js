@@ -15,7 +15,7 @@ $.fn.uiPlayVideoGAnalytics = function( options ) {
     
     
         
-//  ******** Main Code for Video Plaer Start ********
+//  ******** Main Code for Video Player Start ********
     
     $(document).on('click', "." + settings.playBtn, function(e) {
         e.preventDefault();
