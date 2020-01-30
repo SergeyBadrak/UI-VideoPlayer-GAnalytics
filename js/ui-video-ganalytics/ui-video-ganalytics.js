@@ -20,7 +20,7 @@ $.fn.uiPlayVideoGAnalytics = function( options ) {
     $(document).on('click', "." + settings.playBtn, function(e) {
         e.preventDefault();
         
-      //  Pause all videos playback before played selected video
+      //  Pause all videos on the page before played selected video
       $('body').find("video").each(function () {
           this.pause();
           $(this).attr('controls',false);
