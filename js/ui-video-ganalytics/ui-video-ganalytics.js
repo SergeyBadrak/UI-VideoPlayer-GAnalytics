@@ -13,51 +13,60 @@ $.fn.uiPlayVideoGAnalytics = function( options ) {
         }, options );
     
     
+           
+//  ******** Main Code for Video Plaer Start ********
     
-        
-//  ******** Main Code for Video Player Start ********
-    
-    $(document).on('click', "." + settings.playBtn, function(e) {
+    $(document).on('click', "." + settings.playBtn, function (e) {
         e.preventDefault();
         
-      //  Pause all videos on the page before played selected video
-      $('body').find("video").each(function () {
-          this.pause();
-          $(this).attr('controls',false);
-      });
-      $('body').find("." + settings.hideBtn).removeClass(settings.hideBtn);
+        var videoid = "";
+        var video = "";
         
+        playVideo($(this));
         
-        // Hide Play Button for cuurent video
-        $(this).addClass(settings.hideBtn);
-        
-        // Find video source
-        var videoid = $(this).attr('data-video-source');
-        var video = $(videoid).get(0);
-        
-        video.play();
-        $(video).attr('controls',true);
-        
-//  ******** Main Code for Video Plaer End ********   
-        
-     
-        
-        
-              
-        
-        
-// If we wont to send data to Google Analitics
+        // If we wont to send data to Google Analitics
         if (settings.sentToAnalytics) {  
-            gAnalyticsEventListener();
+            gAnalyticsEventListener(videoid);
         } 
-        
-   
-        
-        
-        
-//   ********   Google Analitics Event Listener Start ******** 
+ 
+ //  ******** Main Code for Video Plaer End ******** 
         
         
+               
+
+//  ***************   Functions Definitions   ***************        
+
+//  ********   Play Video Start   ********  
+        
+        function playVideo($el) {
+
+        //  Pause all videos playback before played selected video
+            $('body').find("video").each(function () {
+                this.pause();
+                $(this).attr('controls', false);
+            });
+            $('body').find("." + settings.hideBtn).removeClass(settings.hideBtn);
+
+        // Hide Play Button for cuurent video
+            $el.addClass(settings.hideBtn);
+
+        // Find video source
+            videoid = $el.attr('data-video-source');
+            video = $(videoid).get(0);
+
+            video.play();
+            $(video).attr('controls', true);
+
+            return videoid, video;     
+            
+        }
+        
+//  ********   Play Video End   ******** 
+        
+ 
+        
+//  ********   Google Analitics Event Listener Start ******** 
+               
         
     //  set the name of event category for Analytics Report       
         var category = 'Videos';
@@ -65,36 +74,34 @@ $.fn.uiPlayVideoGAnalytics = function( options ) {
         var action_label = '';
         var timePlayback = ''; 
         var videoTitle = $(video).attr("title");
+                
         
-        
-        
-        function gAnalyticsEventListener() {    
+        function gAnalyticsEventListener(videoid) {    
         
         var a = true;
         var b = true;
         var c = true;
         
-
-        
-    /* Start Video Play */
+            
+    /* Start Video Play Event */
     $(videoid).bind("play", function() {
         console.log("Start Video Play");
         sendToAnalitics(category, 'video played', videoTitle, timePlayback);
     });
      
-    /* Video Paused */    
+    /* Video Paused Event */    
     $(videoid).bind("pause", function() {  
         sendToAnalitics(category, 'video paused', videoTitle, timePlayback);
 //        console.log("paused");    
     }); 
         
-    /* Video Finished, Thanks */
+    /* Video Finished Event */
     $(videoid).bind("ended", function() {
         sendToAnalitics(category, 'watched 100%', videoTitle, timePlayback);
         console.log("watched 100%");
     });
         
-    /* Video Play Progress  */
+    /* Video Play Progress Event */
     $(videoid).bind("timeupdate", function() {
         var currentTime = this.currentTime;
         
@@ -124,8 +131,6 @@ $.fn.uiPlayVideoGAnalytics = function( options ) {
     }        
         
 //   ********   Google Analitics Event Listener End ********        
-        
-     
             
             
         
@@ -142,16 +147,11 @@ $.fn.uiPlayVideoGAnalytics = function( options ) {
         }
         
 //   *************   Send To Google Analytics End *************
-        
-        
-        
-     
-        
-        
+                   
+
         return false;
     });
-
-    
+ 
 };
     
 }( jQuery ));
