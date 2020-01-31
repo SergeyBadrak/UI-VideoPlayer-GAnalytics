@@ -30,7 +30,7 @@ https://artium.com.ua/projects/demo/UI-VideoPlayer-GAnalytics/
 4. Initialise script
 ```JS 
 <script>
-	$(document).ready(function() { 
+    $(document).ready(function() { 
   	$().uiPlayVideoGAnalytics(
         {
             playBtn: "play_video",
