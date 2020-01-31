@@ -44,6 +44,26 @@ https://artium.com.ua/projects/demo/UI-VideoPlayer-GAnalytics/
 <p></p>
 
 <h2>How to use</h2>
+
+<h4>Для отслеживания действий по просмотру видео необходимо подключить код глобального тега Google Analytics <b>gtag</b>. </h4>
+Подробнее https://developers.google.com/analytics/devguides/collection/gtagjs/sending-data?hl=ru
+
+Примерный глобального тега код выглядит так:
+```html
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-116704025-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-116704025-1');
+</script>
+```
+
+
+
+
 <h4>Video Player Example HTML code structure:</h4>
 
 ```html
@@ -56,5 +76,6 @@ https://artium.com.ua/projects/demo/UI-VideoPlayer-GAnalytics/
  </div>
 ```
 
-Set in <b>data-video-source</b> id of video to be played
+Set in <b>data-video-source</b> id of video to be played.
+
 
