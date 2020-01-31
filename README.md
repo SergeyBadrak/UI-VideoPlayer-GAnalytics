@@ -35,4 +35,14 @@ https://artium.com.ua/projects/demo/UI-VideoPlayer-GAnalytics/
 	});
   </script>
   ``` 
+<h4> HTML structure for video player </h4>
+```HTML
+ <div class="col-12 col-lg-6 videos">
+     <a class="play_btn play_video" data-video-source="#video_1" href="#"></a>
 
+     <video id="video_1" title="video 1" preload="none" poster="images/poster-1.jpg">
+         <source src="video/1.mp4" type="video/mp4">
+     </video>
+     <h4>Video 1</h4>
+ </div>
+```
