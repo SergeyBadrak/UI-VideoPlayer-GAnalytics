@@ -14,7 +14,7 @@ $.fn.uiPlayVideoGAnalytics = function( options ) {
     
     
            
-//  ******** Main Code for Video Plaer Start ********
+//  ******** Main Code for Video Player Start ********
     
     $(document).on('click', "." + settings.playBtn, function (e) {
         e.preventDefault();
@@ -65,8 +65,7 @@ $.fn.uiPlayVideoGAnalytics = function( options ) {
         
  
         
-//  ********   Google Analitics Event Listener Start ******** 
-               
+//  ********   Google Analitics Event Listener Start ********         
         
     //  set the name of event category for Analytics Report       
         var category = 'Videos';
