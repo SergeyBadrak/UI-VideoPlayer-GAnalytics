@@ -36,8 +36,6 @@ https://artium.com.ua/projects/demo/UI-VideoPlayer-GAnalytics/
   </script>
   ``` 
 <h4> HTML structure for video player </h4>
-```HTML
- <div class="col-12 col-lg-6 videos">
-     
- </div>
+```html
+ <div class="col-12 col-lg-6 videos">    </div>
 ```
