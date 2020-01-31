@@ -6,7 +6,13 @@ HTML 5 Video Player with Google Analytics event tracking
 https://artium.com.ua/projects/demo/UI-VideoPlayer-GAnalytics/
 
 
-<h4>Installation</h4>
+<h2>Requirements: </h2>
+<ul>
+<li>Google Analytics</li>
+</ul>
+
+
+<h2>Installation</h2>
 
 1. Add CSS style in head
 ```HTML 
@@ -35,15 +41,20 @@ https://artium.com.ua/projects/demo/UI-VideoPlayer-GAnalytics/
 	});
   </script>
   ``` 
+<p></p>
+
+<h2>How to use</h2>
+<h4>Video Player HTML code structure:</h4>
 
 ```html
  <div class="col-12 col-lg-6 videos">
      <a class="play_btn play_video" data-video-source="#video_1" href="#"></a>
-
      <video id="video_1" title="video 1" preload="none" poster="images/poster-1.jpg">
          <source src="video/1.mp4" type="video/mp4">
-
      </video>
      <h4>Video 1</h4>
  </div>
 ```
+
+Set in <b>data-video-source</b> id of video to be played
+
